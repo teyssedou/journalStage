@@ -1,0 +1,67 @@
+form {
+    border: 1px solid red;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-right: 10px;
+}
+
+h1 {
+    font-size: 100px;
+    margin: 20px auto;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form-control {
+    background-color: rgb(112, 107, 107);
+    border: 1px solid black;
+    color: white;
+}
+
+.form-control::placeholder {
+    color: white;
+}
+
+.form-control:focus {
+    background-color: rgba(128, 128, 128, 0.596);
+}
+
+form>div>label {
+    font-weight: bold;
+    color: blue;
+}
+
+.col-sm-10 {
+    margin: 0 auto;
+}
+
+#affiche {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(23, 199, 190);
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: 10px auto;
+    background-color: rgb(196, 184, 179);
+    padding: 10px 0;
+}
+
+#test {
+    background-color: blue;
+}
+
+#affiche>a>button {
+    margin-top: 10px;
+    background-image: linear-gradient(grey, white);
+}
+
+#commentModif {
+    width: 100px;
+}
