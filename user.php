@@ -45,12 +45,12 @@ class User
         }
         $req = $bdd->query('SELECT * FROM form');
         while ($donnee = $req->fetch()) {
-            echo "<div id='affiche'>";
-            echo '<b>Titre: </b>'.$donnee['titre'].'<br />';
-            echo '<b>Date: </b>'.$donnee['dates'].'<br />';
-            echo '<b>Commentaire: </b>'.$donnee['comment'].'';
+            echo "<section id='affiche'>";
+            echo '<div><b><u>Titre:</u> </b>'.$donnee['titre'].'</div><br />';
+            echo '<div><b><u>Date:</u> </b>'.$donnee['dates'].'</div><br />';
+            echo '<b><u>Commentaire:</u> </b>'.$donnee['comment'].'';
             echo'<a href="modif.php/?id='.$donnee['id'].'" ><button>Modifier</button></a>';
-            echo '</div><br />';
+            echo '</section><br />';
         }
     }
 
@@ -70,22 +70,22 @@ class User
             echo '
         <div class="form-group row">
             <label for="inputPassword3" class="col-sm-3 col-form-label">Titre:</label>
-            <div class="col-sm-9">
+            <div class="col-sm-3">
                 <input type="text" class="form-control" id="inputPassword3" value="'.$donnee['titre'].'" name="titre" placeholder="Titre">
             </div>
         </div>';
             echo '
         <div class="form-group row">
             <label for="inputPassword3" class="col-sm-3 col-form-label">Date:</label>
-            <div class="col-sm-9">
+            <div class="col-sm-3">
                 <input type="date" class="form-control" id="inputPassword3" value="'.$donnee['dates'].'" name="dates" placeholder="Date">
             </div>
         </div>';
             echo '
         <div class="form-group row">
             <label for="inputPassword3" class="col-sm-3 col-form-label">Votre commentaire:</label>
-            <div class="col-sm-9">
-            <input type="text" id="commentModif" value="'.$donnee['comment'].'" name="comment">
+            <div class="col-sm-6">
+            <input type="text" class="form-control" id="inputPassword3" value="'.$donnee['comment'].'" name="comment">
             </div>
         </div>';
             echo '
@@ -107,7 +107,6 @@ class User
     {
         $stmt = Connexion :: prepare('UPDATE `form` SET titre=:titre, dates=:dates, comment=:comment WHERE id=:id');
         $stmt->execute([':titre' => $this->titre, ':dates' => $this->dates, ':comment' => $this->comment, ':id' => $this->id]);
-        header('Refresh: 2; url=../index.php');
     }
 
     public static function supprime($id)

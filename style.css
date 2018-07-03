@@ -8,7 +8,8 @@ form {
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 80px;
+    text-align: center;
     margin: 20px auto;
 }
 
@@ -62,6 +63,6 @@ form>div>label {
     background-image: linear-gradient(grey, white);
 }
 
-#commentModif {
-    width: 100px;
+.commentModif {
+    width: 100%;
 }
